@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+        
+        <context:component-scan base-package="springExample.MusicPlayer"/>
+        
+    	<context:property-placeholder location="classpath:musicPlayer.properties"/>
+    
+<!-- 
+    <bean id="classicalMusic"
+        class="springExample.MusicPlayer.ClassicalMusic"
+        init-method="doMyInit"
+        destroy-method="doMyDestroy"
+        scope="singleton"
+        factory-method="getClassicalMusic">
+    </bean>
+    <bean id="rockMusic"
+        class="springExample.MusicPlayer.RockMusic">
+    </bean>
+    <bean id="rapMusic"
+        class="springExample.MusicPlayer.RapMusic">
+    </bean> -->
+    
+<!-- 
+	<bean id="musicPlayer"
+        class="springExample.MusicPlayer.MusicPlayer"
+        scope="prototype">
+        <property name="musicList">
+        	<list>
+        		<ref bean="classicalMusic"/>
+        		<ref bean="rockMusic"/>
+        		<ref bean="rapMusic"/>
+        	</list>
+        </property>
+        
+        <property name="name" value="${musicPlayer.name}"/> 
+        <property name="volume" value="${musicPlayer.volume}"/>
+    </bean> -->
+
+</beans>
