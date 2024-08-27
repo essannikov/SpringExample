@@ -21,9 +21,11 @@ public class FirstController {
 	}
 	
 	@GetMapping("/goodbye")
-	public String goodByePage(HttpServletRequest request) {
+	public String goodByePage(HttpServletRequest request,
+							  Model model) {
 		String name = request.getParameter("name");
 		String surname = request.getParameter("surname");
+		model.addAttribute("message",  name + " " + surname);
 		return "first/goodbye";
 	}
 	

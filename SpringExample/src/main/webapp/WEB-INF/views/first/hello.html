@@ -9,6 +9,6 @@ Hello! <div th:text="${message}"> </div>
 
 <a href="/students">Students</a>
 
-<a th:href="@{'/goodbye?name='} + ${message}">Goodbye</a>
+<a th:href="@{/goodbye?name={txt}(txt=${message})}">Goodbye</a>
 </body>
 </html>
