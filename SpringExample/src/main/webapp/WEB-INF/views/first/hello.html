@@ -2,13 +2,13 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
 <meta charset="UTF-8">
-<title>Hello</title>
+<title>Welcome</title>
 </head>
 <body>
-Hello!
-<p th:text="${message}"/>
+Hello! <div th:text="${message}"> </div>
 
-<a href="/goodbye?name=Evgenii&surname=Sannikov">Say goodbye</a> or
-<a href="/exit">Exit</a>
+<a href="/students">Students</a>
+
+<a th:href="@{'/goodbye?name='} + ${message}">Goodbye</a>
 </body>
 </html>

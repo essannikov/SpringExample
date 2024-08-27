@@ -12,13 +12,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 //@RequestMapping("/first")
 public class FirstController {
 	
-	@GetMapping("/hello")
+	@GetMapping("/")
 	public String helloPage(@RequestParam("name") String name,
 			  				@RequestParam(value = "surname", required = false) String surname,
 			  				Model model) {
-		//System.out.println("Hello, " + name + " " + surname);
-		model.addAttribute("message", "Hello, " + name + " " + surname);
-		
+		model.addAttribute("message",  name + " " + surname);
 		return "first/hello";
 	}
 	
@@ -26,9 +24,6 @@ public class FirstController {
 	public String goodByePage(HttpServletRequest request) {
 		String name = request.getParameter("name");
 		String surname = request.getParameter("surname");
-		
-		System.out.println("Goodbye, " + name + " " + surname);
-		
 		return "first/goodbye";
 	}
 	
